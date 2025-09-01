@@ -87,19 +87,19 @@ export default function Home() {
 
   const testimonials = [
     {
-      quote: "Working with Kaleria was a dream. They captured my essence in ways I never thought possible.",
-      name: "Maya Rodriguez",
+      quote: "Working with Kaleriia was a dream. They captured my essence in ways I never thought possible.",
+      name: "Marta Hrytsai",
       location: "NYC"
     },
     {
       quote: "The attention to detail and creativity exceeded all my expectations. Absolutely stunning results!",
-      name: "Sarah Chen",
-      location: "LA"
+      name: "Kristina Lince",
+      location: "NYC"
     },
     {
-      quote: "Professional, artistic, and truly transformative. I couldn't be happier with my beauty content.",
-      name: "Emma Thompson",
-      location: "Miami"
+      quote: "Professional, artistic, and truly transformative. I couldn\'t be happier with my beauty content.",
+      name: "Olya Novak",
+      location: "NYC"
     }
   ];
 
@@ -469,13 +469,7 @@ export default function Home() {
                   transition={{ duration: 0.6, delay: i * 0.1 }}
                   viewport={{ once: true }}
                   className="aspect-square rounded-lg overflow-hidden cursor-pointer"
-                  onClick={() => {
-                    if (i === 4) {
-                      window.open('https://www.instagram.com/kaleriastudio', '_blank');
-                    } else {
-                      setSelectedPhoto(`/images/foto-${i}.jpg`);
-                    }
-                  }}
+                  onClick={() => setSelectedPhoto(`/images/foto-${i}.jpg`)}
                 >
                   <img 
                     src={`/images/foto-${i}.jpg`}
@@ -541,15 +535,6 @@ export default function Home() {
                           alt={video.title}
                           className="w-full h-full object-cover"
                         />
-                        {/* Instagram-style overlay */}
-                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-transparent to-transparent p-4">
-                          <div className="text-white">
-                            <h4 className="font-semibold text-base mb-1">{video.title}</h4>
-                            <p className="text-xs text-white/90">{video.description}</p>
-                          </div>
-                        </div>
-                        
-
                       </a>
                     ) : (
                       // Regular video card
@@ -598,13 +583,6 @@ export default function Home() {
                             }
                           }}
                         />
-                        {/* Instagram-style overlay */}
-                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-transparent to-transparent p-4">
-                          <div className="text-white">
-                            <h4 className="font-semibold text-base mb-1">{video.title}</h4>
-                            <p className="text-xs text-white/90">{video.description}</p>
-                          </div>
-                        </div>
                         
                         {/* Play button overlay (center) */}
                         <div 
@@ -824,13 +802,8 @@ export default function Home() {
                     <Card className="bg-beige border-primary/20">
                       <CardContent className="p-6 text-center">
                         <p className="text-primary mb-4 italic">&ldquo;{testimonial.quote}&rdquo;</p>
-                        <div className="flex items-center justify-center gap-3">
-                          <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
-                            <span className="text-primary font-semibold text-sm">
-                              {testimonial.name.charAt(0)}
-                            </span>
-                          </div>
-                          <div>
+                        <div className="flex items-center justify-center">
+                          <div className="text-center">
                             <p className="font-semibold text-primary">{testimonial.name}</p>
                             <p className="text-sm text-primary/70">{testimonial.location}</p>
                           </div>
@@ -890,9 +863,9 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-primary py-12">
+      <footer className="bg-primary py-6">
         <div className="container mx-auto px-4 text-center">
-          <div className="flex items-center justify-center gap-6 mb-6">
+          <div className="flex items-center justify-center gap-6 mb-4">
             <a 
               href="https://www.instagram.com/kaleriiastudio" 
           target="_blank"
@@ -914,7 +887,7 @@ export default function Home() {
               <span className="font-semibold">kaleriiastudio</span>
             </a>
           </div>
-          <p className="text-beige/80 text-sm">
+          <p className="text-beige/80 text-xs">
             © 2025 KALERIIA STUDIO. All rights reserved.
           </p>
         </div>
