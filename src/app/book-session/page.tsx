@@ -17,6 +17,13 @@ interface Package {
   categories: string[];
 }
 
+// Google Analytics event helper
+const trackEvent = (action: string, params: Record<string, unknown> = {}) => {
+  if (typeof window !== "undefined" && (window as any).gtag) {
+    (window as any).gtag("event", action, params);
+  }
+};
+
 const packages: Package[] = [
   {
     id: "kids-dream",
@@ -176,7 +183,9 @@ export default function BookSession() {
   }, []);
 
   const togglePackage = (packageId: string) => {
-    setExpandedPackage(expandedPackage === packageId ? null : packageId);
+    const isExpanding = expandedPackage !== packageId;
+    setExpandedPackage(isExpanding ? packageId : null);
+    trackEvent(isExpanding ? "package_expand" : "package_collapse", { id: packageId });
   };
 
   const filteredPackages = packages.filter(pkg => 
@@ -336,7 +345,10 @@ export default function BookSession() {
                       ? "bg-primary text-beige hover:bg-primary/90"
                       : "border-primary text-primary hover:bg-primary hover:text-beige"
                   }`}
-                  onClick={() => setActiveFilter(category)}
+                  onClick={() => {
+                    setActiveFilter(category);
+                    trackEvent("filter_select", { filter: category });
+                  }}
                 >
                   {category}
                 </Button>
@@ -481,6 +493,7 @@ export default function BookSession() {
                                       asChild
                                       className="w-full text-gray-800 rounded-full py-5 px-10 font-medium text-base transition-all duration-300 hover:scale-105"
                                       style={{ background: 'linear-gradient(72deg, #b48e19 0%, #f5da83 100%)' }}
+                                      onClick={() => trackEvent("book_now_click", { id: pkg.id })}
                                     >
                                       <a href="/book-session/kids-dream">
                                         Book Now <ArrowRight className="ml-2 w-5 h-5" />
@@ -491,6 +504,7 @@ export default function BookSession() {
                                       asChild
                                       className="w-full text-gray-800 rounded-full py-5 px-10 font-medium text-base transition-all duration-300 hover:scale-105"
                                       style={{ background: 'linear-gradient(72deg, #b48e19 0%, #f5da83 100%)' }}
+                                      onClick={() => trackEvent("book_now_click", { id: pkg.id })}
                                     >
                                       <a href="/book-session/birthday-queen-king">
                                         Book Now <ArrowRight className="ml-2 w-5 h-5" />
@@ -501,6 +515,7 @@ export default function BookSession() {
                                       asChild
                                       className="w-full text-gray-800 rounded-full py-5 px-10 font-medium text-base transition-all duration-300 hover:scale-105"
                                       style={{ background: 'linear-gradient(72deg, #b48e19 0%, #f5da83 100%)' }}
+                                      onClick={() => trackEvent("book_now_click", { id: pkg.id })}
                                     >
                                       <a href="/book-session/personal-content">
                                         Book Now <ArrowRight className="ml-2 w-5 h-5" />
@@ -511,6 +526,7 @@ export default function BookSession() {
                                       asChild
                                       className="w-full text-gray-800 rounded-full py-5 px-10 font-medium text-base transition-all duration-300 hover:scale-105"
                                       style={{ background: 'linear-gradient(72deg, #b48e19 0%, #f5da83 100%)' }}
+                                      onClick={() => trackEvent("book_now_click", { id: pkg.id })}
                                     >
                                       <a href="/book-session/parent-kids">
                                         Book Now <ArrowRight className="ml-2 w-5 h-5" />
@@ -521,6 +537,7 @@ export default function BookSession() {
                                       asChild
                                       className="w-full text-gray-800 rounded-full py-5 px-10 font-medium text-base transition-all duration-300 hover:scale-105"
                                       style={{ background: 'linear-gradient(72deg, #b48e19 0%, #f5da83 100%)' }}
+                                      onClick={() => trackEvent("book_now_click", { id: pkg.id })}
                                     >
                                       <a href="/book-session/brand-product-story-content">
                                         Book Now <ArrowRight className="ml-2 w-5 h-5" />
@@ -531,6 +548,7 @@ export default function BookSession() {
                                       asChild
                                       className="w-full text-gray-800 rounded-full py-5 px-10 font-medium text-base transition-all duration-300 hover:scale-105"
                                       style={{ background: 'linear-gradient(72deg, #b48e19 0%, #f5da83 100%)' }}
+                                      onClick={() => trackEvent("book_now_click", { id: pkg.id })}
                                     >
                                       <a href="/book-session/christmas-magic-photoshoot">
                                         Book Now <ArrowRight className="ml-2 w-5 h-5" />
@@ -541,6 +559,7 @@ export default function BookSession() {
                                       asChild
                                       className="w-full text-gray-800 rounded-full py-5 px-10 font-medium text-base transition-all duration-300 hover:scale-105"
                                       style={{ background: 'linear-gradient(72deg, #b48e19 0%, #f5da83 100%)' }}
+                                      onClick={() => trackEvent("book_now_click", { id: pkg.id })}
                                     >
                                       <a href="/book-session/maternity-glow">
                                         Book Now <ArrowRight className="ml-2 w-5 h-5" />
@@ -551,6 +570,7 @@ export default function BookSession() {
                                       asChild
                                       className="w-full text-gray-800 rounded-full py-5 px-10 font-medium text-base transition-all duration-300 hover:scale-105"
                                       style={{ background: 'linear-gradient(72deg, #b48e19 0%, #f5da83 100%)' }}
+                                      onClick={() => trackEvent("book_now_click", { id: pkg.id })}
                                     >
                                       <a href="/book-session/premium-portrait-photoshoot">
                                         Book Now <ArrowRight className="ml-2 w-5 h-5" />
