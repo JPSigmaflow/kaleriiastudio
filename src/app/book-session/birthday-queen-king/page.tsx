@@ -2,20 +2,21 @@
 
 import { useEffect } from "react";
 import Cal, { getCalApi } from "@calcom/embed-react";
+import Link from "next/link";
 import { X } from "lucide-react";
 
 export default function BirthdayQueenKingBookingPage() {
   useEffect(() => {
     (async function () {
       try {
-        const cal = await getCalApi({ namespace: "birthday-queen-king-photoshoot" } as any);
+        const cal = await getCalApi({ namespace: "birthday-queen-king-photoshoot" } as { namespace: string });
         cal("ui", {
           theme: "light",
           cssVarsPerTheme: { light: { "cal-brand": "#5b6854" } },
           hideEventTypeDetails: false,
           layout: "month_view",
         });
-      } catch (e) {
+      } catch {
         // no-op
       }
     })();
@@ -32,14 +33,14 @@ export default function BirthdayQueenKingBookingPage() {
         />
       </div>
 
-      <a
+      <Link
         href="/book-session"
         aria-label="Back to packages"
         className="fixed top-4 right-4 sm:top-6 sm:right-6 text-white hover:opacity-90 transition-opacity bg-primary rounded-full w-12 h-12 flex items-center justify-center shadow-xl pointer-events-auto"
-        style={{ zIndex: 9999999999 as any, WebkitTapHighlightColor: 'transparent' }}
+        style={{ zIndex: 2147483647, WebkitTapHighlightColor: 'transparent' }}
       >
         <X className="w-6 h-6" />
-      </a>
+      </Link>
     </div>
   );
 }

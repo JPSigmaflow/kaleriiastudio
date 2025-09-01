@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronUp, Camera, Star, ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -139,14 +140,14 @@ export default function BookSession() {
   useEffect(() => {
     (async function () {
       try {
-        const cal = await getCalApi({ namespace: "kids-dream-photoshoot" } as any);
+        const cal = await getCalApi({ namespace: "kids-dream-photoshoot" } as { namespace: string });
         cal("ui", { 
           theme: "light",
           cssVarsPerTheme: { light: { "cal-brand": "#5b6854" }, dark: { "cal-brand": "#5b6854" } },
           hideEventTypeDetails: false,
           layout: "month_view"
         });
-      } catch (e) {
+      } catch {
         // no-op
       }
     })();
@@ -244,44 +245,44 @@ export default function BookSession() {
                   <div>
                     <ul className="space-y-4">
                       <li>
-                        <a 
+                        <Link 
                           href="/"
                           className="text-beige hover:text-beige/80 transition-colors block py-3 text-2xl font-bold cursor-pointer"
                           style={{ fontFamily: '"larken", "larken-display", "Larken", serif', fontWeight: 300 }}
                           onClick={() => setIsMenuOpen(false)}
                         >
                           Home
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a 
+                        <Link 
                           href="/#gallery"
                           className="text-beige hover:text-beige/80 transition-colors block py-3 text-2xl font-bold cursor-pointer"
                           style={{ fontFamily: '"larken", "larken-display", "Larken", serif', fontWeight: 300 }}
                           onClick={() => setIsMenuOpen(false)}
                         >
                           Watch Photo: Our Work in Action
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a 
+                        <Link 
                           href="/#videos"
                           className="text-beige hover:text-beige/80 transition-colors block py-3 text-2xl font-bold cursor-pointer"
                           style={{ fontFamily: '"larken", "larken-display", "Larken", serif', fontWeight: 300 }}
                           onClick={() => setIsMenuOpen(false)}
                         >
                           Video: Beauty in Motion
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a 
+                        <Link 
                           href="/#before-after"
                           className="text-beige hover:text-beige/80 transition-colors block py-3 text-2xl font-bold cursor-pointer"
                           style={{ fontFamily: '"larken", "larken-display", "Larken", serif', fontWeight: 300 }}
                           onClick={() => setIsMenuOpen(false)}
                         >
                           The Art of Makeup: Beauty, defined by every detail
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </div>
