@@ -533,7 +533,7 @@ export default function BookSession() {
                 Ready to Create Magic?
               </h3>
               <p className="text-lg text-primary/80 max-w-2xl mx-auto mb-6">
-                Can't find the perfect package? Let's create a custom experience just for you
+                Can&#39;t find the perfect package? Let&#39;s create a custom experience just for you
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
