@@ -17,10 +17,17 @@ interface Package {
   categories: string[];
 }
 
-// Google Analytics event helper
+// Google Analytics event helper (typed, no explicit any)
+type Gtag = (...args: unknown[]) => void;
+declare global {
+  interface Window {
+    gtag?: Gtag;
+  }
+}
+
 const trackEvent = (action: string, params: Record<string, unknown> = {}) => {
-  if (typeof window !== "undefined" && (window as any).gtag) {
-    (window as any).gtag("event", action, params);
+  if (typeof window !== "undefined" && typeof window.gtag === "function") {
+    window.gtag("event", action, params);
   }
 };
 
