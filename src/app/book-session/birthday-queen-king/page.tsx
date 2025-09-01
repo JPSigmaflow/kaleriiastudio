@@ -12,7 +12,7 @@ export default function BirthdayQueenKingBookingPage() {
         const cal = await getCalApi({ namespace: "birthday-queen-king-photoshoot" } as { namespace: string });
         cal("ui", {
           theme: "light",
-          cssVarsPerTheme: { light: { "cal-brand": "#5b6854" } },
+          cssVarsPerTheme: { light: { "cal-brand": "#5b6854" }, dark: { "cal-brand": "#5b6854" } },
           hideEventTypeDetails: false,
           layout: "month_view",
         });
