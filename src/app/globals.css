@@ -1,26 +1,253 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-playfair: var(--font-playfair);
+  --font-larken-light: var(--font-larken-light);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --radius: 0.625rem;
+  
+  /* Kaleriia Studio Custom Colors */
+  --olive-green: 120 15% 35%; /* Muted olive green */
+  --light-beige: 45 30% 95%; /* Light beige/off-white */
+  --dark-green: 120 20% 25%; /* Darker green for text */
+  --warm-beige: 45 25% 90%; /* Warmer beige for backgrounds */
+  
+  --background: hsl(var(--light-beige));
+  --foreground: hsl(var(--dark-green));
+  --card: hsl(var(--light-beige));
+  --card-foreground: hsl(var(--dark-green));
+  --popover: hsl(var(--light-beige));
+  --popover-foreground: hsl(var(--dark-green));
+  --primary: hsl(var(--olive-green));
+  --primary-foreground: hsl(var(--light-beige));
+  --secondary: hsl(var(--warm-beige));
+  --secondary-foreground: hsl(var(--dark-green));
+  --muted: hsl(var(--warm-beige));
+  --muted-foreground: hsl(var(--olive-green));
+  --accent: hsl(var(--warm-beige));
+  --accent-foreground: hsl(var(--dark-green));
+  --destructive: 0 84% 60%;
+  --border: hsl(var(--olive-green) / 0.2);
+  --input: hsl(var(--olive-green) / 0.1);
+  --ring: hsl(var(--olive-green) / 0.3);
+  
+  /* Chart colors for any future use */
+  --chart-1: 120 15% 35%;
+  --chart-2: 45 30% 95%;
+  --chart-3: 120 20% 25%;
+  --chart-4: 45 25% 90%;
+  --chart-5: 120 15% 40%;
+  
+  /* Sidebar colors (if needed) */
+  --sidebar: hsl(var(--light-beige));
+  --sidebar-foreground: hsl(var(--dark-green));
+  --sidebar-primary: hsl(var(--olive-green));
+  --sidebar-primary-foreground: hsl(var(--light-beige));
+  --sidebar-accent: hsl(var(--warm-beige));
+  --sidebar-accent-foreground: hsl(var(--dark-green));
+  --sidebar-border: hsl(var(--olive-green) / 0.2);
+  --sidebar-ring: hsl(var(--olive-green) / 0.3);
+}
+
+.dark {
+  --background: hsl(var(--dark-green));
+  --foreground: hsl(var(--light-beige));
+  --card: hsl(var(--olive-green));
+  --card-foreground: hsl(var(--light-beige));
+  --popover: hsl(var(--olive-green));
+  --popover-foreground: hsl(var(--light-beige));
+  --primary: hsl(var(--warm-beige));
+  --primary-foreground: hsl(var(--dark-green));
+  --secondary: hsl(var(--olive-green));
+  --secondary-foreground: hsl(var(--light-beige));
+  --muted: hsl(var(--olive-green));
+  --muted-foreground: hsl(var(--warm-beige));
+  --accent: hsl(var(--olive-green));
+  --accent-foreground: hsl(var(--light-beige));
+  --destructive: 0 84% 60%;
+  --border: hsl(var(--light-beige) / 0.1);
+  --input: hsl(var(--light-beige) / 0.15);
+  --ring: hsl(var(--warm-beige) / 0.3);
+  
+  /* Chart colors for dark mode */
+  --chart-1: 120 15% 40%;
+  --chart-2: 45 25% 90%;
+  --chart-3: 120 20% 30%;
+  --chart-4: 45 30% 95%;
+  --chart-5: 120 15% 45%;
+  
+  /* Sidebar colors for dark mode */
+  --sidebar: hsl(var(--olive-green));
+  --sidebar-foreground: hsl(var(--light-beige));
+  --sidebar-primary: hsl(var(--warm-beige));
+  --sidebar-primary-foreground: hsl(var(--dark-green));
+  --sidebar-accent: hsl(var(--olive-green));
+  --sidebar-accent-foreground: hsl(var(--light-beige));
+  --sidebar-border: hsl(var(--light-beige) / 0.1);
+  --sidebar-ring: hsl(var(--warm-beige) / 0.3);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* Custom font classes */
+  .font-playfair {
+    font-family: var(--font-playfair);
+  }
+  
+  .font-sans {
+    font-family: var(--font-geist-sans);
+  }
+  
+  .font-larken {
+    font-family: "larken", "larken-display", "Larken", serif;
+  }
+  
+  .font-larken-light {
+    font-family: "larken", "larken-display", "Larken", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .font-larken-regular {
+    font-family: "larken", "larken-display", "Larken", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .font-larken-medium {
+    font-family: "larken", "larken-display", "Larken", serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .font-larken-bold {
+    font-family: "larken", "larken-display", "Larken", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  /* Hero section specific Font Larken classes */
+  .hero-beauty-content {
+    font-family: "larken", "larken-display", "Larken", serif;
+    font-weight: 400;
+    font-style: normal;
+    text-shadow: 
+      0 1px 2px rgba(0, 0, 0, 0.25),
+      0 3px 6px rgba(0, 0, 0, 0.15),
+      0 6px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  .hero-reimagined {
+    font-family: "larken", "larken-display", "Larken", serif;
+    font-weight: 600;
+    font-style: normal;
+    margin-bottom: 0;
+    padding: 0;
+    /* Shadow only outside the text */
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.32)) drop-shadow(0 12px 24px rgba(0, 0, 0, 0.22));
+  }
+
+
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Better touch scrolling on mobile */
+  .overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+  
+  .overflow-x-auto::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom utility classes for Kaleriia Studio */
+@layer utilities {
+  .text-olive {
+    color: hsl(var(--olive-green));
+  }
+  
+  .text-beige {
+    color: hsl(var(--light-beige));
+  }
+  
+  .bg-olive {
+    background-color: hsl(var(--olive-green));
+  }
+  
+  .bg-beige {
+    background-color: hsl(var(--light-beige));
+  }
+  
+  .bg-warm-beige {
+    background-color: hsl(var(--warm-beige));
+  }
+  
+  /* Scrollbar hiding utility */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Custom container for better mobile experience */
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
 }
