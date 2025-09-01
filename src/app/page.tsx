@@ -112,7 +112,7 @@ export default function Home() {
     {
       title: "Sunflower field session",
       description: "capturing natural beauty in nature.",
-      image: "/images/video-2.mov"
+      image: "/images/video-4.mov"
     },
     {
       title: "Follow on TikTok",
