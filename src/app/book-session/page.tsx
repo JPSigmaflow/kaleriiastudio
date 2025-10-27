@@ -33,127 +33,99 @@ const trackEvent = (action: string, params: Record<string, unknown> = {}) => {
 
 const packages: Package[] = [
   {
-    id: "kids-dream",
-    title: "Kids Dream Photoshoot",
-    shortDescription: "Grand Opening Special: $295",
-    fullDescription: [
-      "Individual approach with full posing guidance",
-      "Creation of a unique look in the studio using props and custom AI elements",
-      "Artistic photo editing",
-      "10 professionally edited photos (client’s choice)",
-      "Pre-shoot consultation with parents to discuss wishes and styles",
-      "Session Duration: ~1.5 hours (prep & shoot)"
-    ],
-    categories: ["Kids"]
-  },
-  {
-    id: "birthday-queen-king",
-    title: "Birthday Queen/King Photo & Videoshoot",
-    shortDescription: "Grand Opening Special: $350",
-    fullDescription: [
-      "Beauty prep included (studio)",
-      "Creation of a festive look and décor",
-      "Portraits with décor, cake, and candles",
-      "15 professionally edited photos (client’s choice)",
-      "1 short video clip/reel with the cake to capture emotions",
-      "Full posing guidance",
-      "Session Duration: ~2 hours (prep & shoot)"
-    ],
-    categories: ["Birthday", "Kids"]
-  },
-  {
-    id: "personal-content",
-    title: "Personal Content",
-    shortDescription: "Grand Opening Special: $350",
-    fullDescription: [
-      "Full personalized look (styling + guidance)",
-      "Beauty prep included (studio)",
-      "2-hour photoshoot",
-      "15 professionally edited photos (client’s choice)",
-      "1 Short video clip / Reel / TikTok for social media",
-      "Individual approach and posing guidance throughout",
-      "Session Duration: ~2 hours (prep & shoot)"
-    ],
-    categories: ["Premium", "Social Media"]
-  },
-  {
-    id: "parent-kids",
-    title: "Parent & Kids Photoshoot",
-    shortDescription: "Grand Opening Special: $350",
-    fullDescription: [
-      "Beauty prep included (studio)",
-      "Individual approach to each participant",
-      "Personalized looks, décor, and AI elements for a unique style",
-      "Portraits of one parent with up to 2 children (group and individual shots)",
-      "Full posing guidance",
-      "15 professionally edited photos (client’s choice)",
-      "Session Duration: ~2 hours (prep & shoot)",
-      "👉 For more than 2 children, a custom package or additional fee applies."
-    ],
-    categories: ["Kids"]
-  },
-  
-  {
-    id: "maternity-glow",
-    title: "Maternity Glow Photoshoot",
-    shortDescription: "Grand Opening Special: $450",
-    fullDescription: [
-      "Portraits of the mom-to-be alone or with a partner (studio or outdoor)",
-      "Individual approach and guidance for each client",
-      "Beauty prep included (studio)",
-      "15 professionally edited photos (client’s choice)",
-      "Full posing guidance and frame composition support",
-      "High-quality equipment, professional lighting, and props",
-      "Creative enhancement with AI elements for a unique touch",
-      "Session Duration: ~2 hours (prep & shoot)"
-    ],
-    categories: ["Maternity", "Couples"]
-  },
-  {
     id: "christmas-magic",
-    title: "Christmas Magic Photoshoot",
-    shortDescription: "Grand Opening Special: $650",
+    title: "🎅 Christmas Magic Photoshoot",
+    shortDescription: "Grand Opening Special: $750 (~2 hours in studio)",
     fullDescription: [
       "Individually styled looks and Christmas-themed décor in the studio",
-      "Beauty prep included (studio)",
       "Professional lighting, props, and cozy seasonal setups",
       "Posing guidance for natural and warm portraits",
-      "20 professionally edited photos (client’s choice)",
-      "Short festive video clips for social media",
+      "15 professionally edited photos (client's choice)",
       "Perfect for up to 3 participants (small family, couple, or couple with a pet)",
-      "Session Duration: ~2 hours (prep & shoot)",
       "👉 For larger families, please contact us directly for a custom package."
     ],
     isSpecial: true,
     categories: ["Kids", "Family", "Couples", "Christmas"]
   },
   {
+    id: "birthday-queen-king",
+    title: "Birthday Queen/King Photo & Videoshoot",
+    shortDescription: "Grand Opening Special: $700 (2 hours in studio)",
+    fullDescription: [
+      "Beauty prep included (studio)",
+      "Creation of a festive look and décor",
+      "Portraits with décor, cake, and candles",
+      "10 professionally edited photos",
+      "1 short video clip/reel with the cake to capture emotions",
+      "Full posing guidance"
+    ],
+    categories: ["Birthday", "Kids"]
+  },
+  {
+    id: "kids-dream",
+    title: "Kids Dream Photoshoot",
+    shortDescription: "Grand Opening Special: $350 (~1.5 hours in studio)",
+    fullDescription: [
+      "Individual approach with full posing guidance",
+      "Creation of a unique look in the studio using props and custom AI elements",
+      "10 professionally edited photos (client's choice)",
+      "Pre-shoot consultation with parents to discuss wishes and styles"
+    ],
+    categories: ["Kids"]
+  },
+  {
+    id: "maternity-glow",
+    title: "Maternity Glow Photoshoot",
+    shortDescription: "Grand Opening Special: $700 (~2 hours in studio)",
+    fullDescription: [
+      "Portraits of the mom-to-be alone or with a partner (studio or outdoor)",
+      "Individual approach and guidance for each client",
+      "Beauty prep included (studio)",
+      "15 professionally edited photos",
+      "Full posing guidance and frame composition support"
+    ],
+    categories: ["Maternity", "Couples"]
+  },
+  {
+    id: "parent-kids",
+    title: "Parent & Kids Photoshoot",
+    shortDescription: "Grand Opening Special: $800 (~2 hours in studio)",
+    fullDescription: [
+      "Beauty prep included (studio)",
+      "Individual approach to each participant",
+      "Portraits of one parent with up to 2 children (group and individual shots)",
+      "Full posing guidance",
+      "15 professionally edited photos (client's choice)",
+      "👉 For more than 2 children, a custom package or additional fee applies."
+    ],
+    categories: ["Kids"]
+  },
+  {
     id: "premium-portrait",
     title: "Premium Portrait Photoshoot",
-    shortDescription: "Grand Opening Special: $1,500",
+    shortDescription: "Grand Opening Special: $1500 (~3-4 hours in studio)",
     fullDescription: [
       "3–4 hours of shooting in the studio with full styling and look creation support",
       "Premium beauty prep included",
       "Professional equipment, lighting, props, and creative AI elements",
       "2 social media video clips",
-      "25 premium-retouched photos (client’s choice)",
-      "Personal consultation and full posing guidance throughout the session",
-      "Session Duration: ~3–4 hours (prep & shoot)"
+      "20 premium-retouched photos (client's choice)",
+      "Personal consultation and full posing guidance throughout the session"
     ],
-    categories: ["Premium"]
+    categories: ["Premium", "Social Media"]
   },
   {
     id: "brand-product",
-    title: "Brand & Product Story Content",
-    shortDescription: "Custom-tailored brand concept and content",
+    title: "Personal Content & Brands",
+    shortDescription: "Starting at $350 per hour",
     fullDescription: [
       "Custom-tailored concept development aligned with your brand identity",
       "Product photography and lifestyle content (with models or owners)",
       "Option to include video clips, reels, and behind-the-scenes moments",
       "Fully customized approach — scope, type, and amount of content tailored to your goals",
-      "How it works: Book your date & time, and we’ll connect with you to discuss the details — content scope, shoot duration, and pricing."
+      "How it works: Contact us to discuss the details — content scope, shoot duration, and pricing."
     ],
-    categories: ["For Brands"]
+    categories: ["For Brands", "Social Media"]
   }
 ];
 
@@ -392,17 +364,18 @@ export default function BookSession() {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <Card className="bg-beige border-primary/20 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <Card className="bg-beige border-primary/20 shadow-lg hover:shadow-xl transition-all duration-300" style={pkg.id === "christmas-magic" ? { backgroundColor: "#ba2727", borderColor: "#8a1d1d" } : {}}>
                       <CardContent className="p-0">
                         {/* Package Header - Always Visible */}
                         <div 
-                          className="px-6 py-4 cursor-pointer hover:bg-primary/5 transition-colors duration-200"
+                          className={pkg.id === "christmas-magic" ? "px-6 py-4 cursor-pointer transition-colors duration-200" : "px-6 py-4 cursor-pointer hover:bg-primary/5 transition-colors duration-200"}
+                          style={pkg.id === "christmas-magic" ? { backgroundColor: "#ba2727" } : {}}
                           onClick={() => togglePackage(pkg.id)}
                         >
                           <div className="flex items-center justify-between">
                             <div className="flex-1">
                               <div className="flex items-center gap-3 mb-1">
-                                <h3 className="text-xl md:text-2xl font-larken-light font-semibold text-primary"
+                                <h3 className={pkg.id === "christmas-magic" ? "text-xl md:text-2xl font-larken-light font-semibold text-white" : "text-xl md:text-2xl font-larken-light font-semibold text-primary"}
                                     style={{ fontFamily: '"larken", "larken-display", "Larken", serif', fontWeight: 600 }}>
                                   {pkg.title}
                                 </h3>
@@ -413,7 +386,7 @@ export default function BookSession() {
                                   </span>
                                 )}
                               </div>
-                              <p className="text-primary/80 text-base leading-normal">
+                              <p className={pkg.id === "christmas-magic" ? "text-white/90 text-base leading-normal" : "text-primary/80 text-base leading-normal"}>
                                 {pkg.shortDescription}
                               </p>
                               {/* Category tags */}
@@ -421,7 +394,7 @@ export default function BookSession() {
                                 {pkg.categories.map((category) => (
                                   <span
                                     key={category}
-                                    className="inline-flex items-center px-2 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full"
+                                    className={pkg.id === "christmas-magic" ? "inline-flex items-center px-2 py-1 bg-white/20 text-white text-xs font-medium rounded-full" : "inline-flex items-center px-2 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full"}
                                   >
                                     {category}
                                   </span>
@@ -434,9 +407,9 @@ export default function BookSession() {
                                 transition={{ duration: 0.3 }}
                               >
                                 {expandedPackage === pkg.id ? (
-                                  <ChevronUp className="w-6 h-6 text-primary" />
+                                  <ChevronUp className={pkg.id === "christmas-magic" ? "w-6 h-6 text-white" : "w-6 h-6 text-primary"} />
                                 ) : (
-                                  <ChevronDown className="w-6 h-6 text-primary" />
+                                  <ChevronDown className={pkg.id === "christmas-magic" ? "w-6 h-6 text-white" : "w-6 h-6 text-primary"} />
                                 )}
                               </motion.div>
                             </div>
@@ -453,7 +426,7 @@ export default function BookSession() {
                               transition={{ duration: 0.3, ease: "easeInOut" }}
                               className="overflow-hidden"
                             >
-                              <div className="px-6 pb-4 border-t border-primary/10">
+                              <div className="px-6 pb-4 border-t border-primary/10" style={pkg.id === "christmas-magic" ? { backgroundColor: "#ba2727", borderTopColor: "rgba(255,255,255,0.2)" } : {}}>
                                 <div className="pt-4 space-y-2">
                                   {pkg.fullDescription.map((detail, detailIndex) => (
                                     <motion.div
@@ -467,7 +440,7 @@ export default function BookSession() {
                                       }}
                                       className="flex items-start gap-3"
                                     >
-                                      <Check className="w-4 h-4 text-primary mt-1.5 flex-shrink-0" />
+                                      <Check className={pkg.id === "christmas-magic" ? "w-4 h-4 text-white mt-1.5 flex-shrink-0" : "w-4 h-4 text-primary mt-1.5 flex-shrink-0"} />
                                       <motion.p
                                         initial={{ opacity: 0, x: 50 }}
                                         animate={{ opacity: 1, x: 0 }}
@@ -476,7 +449,7 @@ export default function BookSession() {
                                           delay: 0.3 + (detailIndex * 0.1),
                                           ease: "easeOut"
                                         }}
-                                        className="text-primary/90 text-base leading-relaxed"
+                                        className={pkg.id === "christmas-magic" ? "text-white/95 text-base leading-relaxed" : "text-primary/90 text-base leading-relaxed"}
                                       >
                                         {detail}
                                       </motion.p>
@@ -539,17 +512,6 @@ export default function BookSession() {
                                         Book Now <ArrowRight className="ml-2 w-5 h-5" />
                                       </a>
                                     </Button>
-                                  ) : pkg.id === "brand-product" ? (
-                                    <Button 
-                                      asChild
-                                      className="w-full text-gray-800 rounded-full py-5 px-10 font-medium text-base transition-all duration-300 hover:scale-105"
-                                      style={{ background: 'linear-gradient(72deg, #b48e19 0%, #f5da83 100%)' }}
-                                      onClick={() => trackEvent("book_now_click", { id: pkg.id })}
-                                    >
-                                      <a href="/book-session/brand-product-story-content">
-                                        Book Now <ArrowRight className="ml-2 w-5 h-5" />
-                                      </a>
-                                    </Button>
                                   ) : pkg.id === "christmas-magic" ? (
                                     <Button 
                                       asChild
@@ -581,6 +543,17 @@ export default function BookSession() {
                                     >
                                       <a href="/book-session/premium-portrait-photoshoot">
                                         Book Now <ArrowRight className="ml-2 w-5 h-5" />
+                                      </a>
+                                    </Button>
+                                  ) : pkg.id === "brand-product" ? (
+                                    <Button 
+                                      asChild
+                                      className="w-full text-gray-800 rounded-full py-5 px-10 font-medium text-base transition-all duration-300 hover:scale-105"
+                                      style={{ background: 'linear-gradient(72deg, #b48e19 0%, #f5da83 100%)' }}
+                                      onClick={() => trackEvent("contact_click", { id: pkg.id })}
+                                    >
+                                      <a href="mailto:contact@kaleriiastudio.com">
+                                        Contact Us <ArrowRight className="ml-2 w-5 h-5" />
                                       </a>
                                     </Button>
                                   ) : (
