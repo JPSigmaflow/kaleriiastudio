@@ -62,6 +62,19 @@ const packages: Package[] = [
     categories: ["Birthday", "Kids"]
   },
   {
+    id: "heart-dreams",
+    title: "💖 Heart Dreams Photoshoot",
+    shortDescription: "$500 (~1.5 hours in studio)",
+    fullDescription: [
+      "Beauty prep included (studio)",
+      "1.5-hour guided photoshoot in studio",
+      "10 fully edited, high-resolution photos",
+      "Assistance with posing and creative direction",
+      "Access to the signature Pink Heart setup"
+    ],
+    categories: ["Kids", "Couples", "Birthday", "Social Media"]
+  },
+  {
     id: "kids-dream",
     title: "Kids Dream Photoshoot",
     shortDescription: "Grand Opening Special: $350 (~1.5 hours in studio)",
@@ -487,6 +500,17 @@ export default function BookSession() {
                                       onClick={() => trackEvent("book_now_click", { id: pkg.id })}
                                     >
                                       <a href="/book-session/birthday-queen-king">
+                                        Book Now <ArrowRight className="ml-2 w-5 h-5" />
+                                      </a>
+                                    </Button>
+                                  ) : pkg.id === "heart-dreams" ? (
+                                    <Button 
+                                      asChild
+                                      className="w-full text-gray-800 rounded-full py-5 px-10 font-medium text-base transition-all duration-300 hover:scale-105"
+                                      style={{ background: 'linear-gradient(72deg, #b48e19 0%, #f5da83 100%)' }}
+                                      onClick={() => trackEvent("book_now_click", { id: pkg.id })}
+                                    >
+                                      <a href="/book-session/heart-dreams">
                                         Book Now <ArrowRight className="ml-2 w-5 h-5" />
                                       </a>
                                     </Button>
